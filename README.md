@@ -10,38 +10,12 @@
 動態：人物會動。
 隨機性主題方面的原創性(中英)和創意性(故事劇情)
 
-Clark #ms314006
-Hi, I'm Clark! I am a front-end Developer of web. I love learing new technology and skills of web, I writting articles about technology of program I leanrned on dev.to. I leaving in Taiwan now. I want to work at others country, talk a lot with all sort of people and know more about this world 😸.
+<h1 align="center">Hi 👋, 我們是 CCUnion</h1>
+<h3 align="center">一群嘗試做出小遊戲的人</h3>
 
-🤓 My values
-🍏 Beginner's mindset and curiosity
-🙌 Sharing anything I learned
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+</p>
 
-🔭 Goals of 2020
-I want to learn English. Now I watch English youtube channels and articles everyday and write English articles about program technology each week, I hope I can prepared in 2020 💪. I also want to contribute more open source projects make I can improve my skills of program.
-
-🧠 That I know and use
-📚 Langues and Frameworks
-HTML5
-CSS3, SCSS, SASS
-Material-ui, Antd, Bootstrap
-JavaScript, TypeScript
-React, Redux, Redux-Saga React-Router, Next.js
-Vue, Vuex, Vue-Router
-Jest, Enzyme, React-Testing-Library, Vue-Testing-Library
-🔧 Tool
-Version Control(Git/it-Flow)
-Test Driven Developer
-Open Source Projects
-Travis-CI
-💡 Projects
-Team of Pokemon
-Hangman
-90 secconds game - A yellow duck
-Free cell
-Music player
-🔗 Get in touch
-Personal site: http://ms314006.github.io/
-Dev.to: https://dev.to/ms314006
-StackOverflow: https://stackoverflow.com/users/10421516/clark
-Medium: https://medium.com/@GQSM
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://www.cprogramming.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="c" width="40" height="40"/> </a> </p>
