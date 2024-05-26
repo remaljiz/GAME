@@ -1,7 +1,7 @@
 /*
-1.ªì©l¤Æ¦UºØªF¦è¡Gsdl, window¡Brenderer¡B®y¼Ð
-2.Åª¨ú¤£¦Pªº¦a¹Ï¡B¹Ï¤ù
-3.³]©w¤­°¦¦Ñ¹«¥X²{¦b¦a¹Ï¤WªºÀH¾÷®y¼Ð, ¤@©w¥Í¦¨¦bªÅ¦a, ¥X²{¦ì¸m¥i¥H­«Å|
+1.ï¿½ï¿½lï¿½Æ¦Uï¿½ØªFï¿½ï¿½Gsdl, windowï¿½Brendererï¿½Bï¿½yï¿½ï¿½
+2.Åªï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½ï¿½ï¿½aï¿½Ï¡Bï¿½Ï¤ï¿½
+3.ï¿½]ï¿½wï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Xï¿½{ï¿½bï¿½aï¿½Ï¤Wï¿½ï¿½ï¿½Hï¿½ï¿½ï¿½yï¿½ï¿½, ï¿½@ï¿½wï¿½Í¦ï¿½ï¿½bï¿½Å¦a, ï¿½Xï¿½{ï¿½ï¿½mï¿½iï¿½Hï¿½ï¿½ï¿½|
 */
 
 #include "basic.h"
@@ -11,20 +11,20 @@
 #include "generate.h"
 #include "game.h"
 
-//®à­±ªº¤TºØ«¬¦¡
+//ï¿½à­±ï¿½ï¿½ï¿½Tï¿½Ø«ï¿½ï¿½ï¿½
 struct computerDesktop computerDesktop[3];
-//®à­±À³¥Îµ{¦¡*4 + ¬Û¤ù*1 + µ§°O¯È*1 + ºô­¶°Êµe*2
+//ï¿½à­±ï¿½ï¿½ï¿½Îµ{ï¿½ï¿½*4 + ï¿½Û¤ï¿½*1 + ï¿½ï¿½ï¿½Oï¿½ï¿½*1 + ï¿½ï¿½ï¿½ï¿½ï¿½Êµe*2
 struct computerApp computerApp[8];
-//wordle¥D­¶­±¡B­¶­±ªº?(³W«h»¡©ú¹Ï¥Ü)¡B°h¥X¹Ï¥Ü¡B³W«h­¶­±¡B¦¨¥\µe­±¡B¥¢±Ñµe­±
+//wordleï¿½Dï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?(ï¿½Wï¿½hï¿½ï¿½ï¿½ï¿½ï¿½Ï¥ï¿½)ï¿½Bï¿½hï¿½Xï¿½Ï¥Ü¡Bï¿½Wï¿½hï¿½ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½\ï¿½eï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½Ñµeï¿½ï¿½
 struct wordlePageOption wordlePageOption[6];
-//wordle¦r¥À¿é¤J
+//wordleï¿½rï¿½ï¿½ï¿½ï¿½J
 struct wordle_letters_square wordle_letters_square[10][10];
-//¨C¤@¦æ¦r¥Àªºª¬ºA
+//ï¿½Cï¿½@ï¿½ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½A
 struct letterColor letterColor[3];
-//­I¥]Àx¦sªºªF¦è(¦r¥À¥d)¡A­I¥]®e¶q³Ì¤j10®æ(¨C¤@Ãö¯È±ø¦ì¸m©T©w ³Q©â¨ì¤~·|Åã¥Ü)
+//ï¿½Iï¿½]ï¿½xï¿½sï¿½ï¿½ï¿½Fï¿½ï¿½(ï¿½rï¿½ï¿½ï¿½d)ï¿½Aï¿½Iï¿½]ï¿½eï¿½qï¿½Ì¤j10ï¿½ï¿½(ï¿½Cï¿½@ï¿½ï¿½ï¿½È±ï¿½ï¿½ï¿½mï¿½Tï¿½w ï¿½Qï¿½ï¿½ï¿½~ï¿½|ï¿½ï¿½ï¿½)
 struct bagStore bagStore[9];
 
-//ªì©l¤Æsdl, img, ttf, window, renderer
+//ï¿½ï¿½lï¿½ï¿½sdl, img, ttf, window, renderer
 void initBasic(void){
     //init SDL
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0){
@@ -33,8 +33,8 @@ void initBasic(void){
     }
 
     //init IMG lib
-    int imgFlags = IMG_INIT_JPG | IMG_INIT_PNG;; //¹Ï¤ù®æ¦¡:PNG¡BJPG
-    int initImgFlag = IMG_Init(imgFlags); //ªì©l¤Æ
+    int imgFlags = IMG_INIT_JPG | IMG_INIT_PNG;; //ï¿½Ï¤ï¿½ï¿½æ¦¡:PNGï¿½BJPG
+    int initImgFlag = IMG_Init(imgFlags); //ï¿½ï¿½lï¿½ï¿½
     if(!(IMG_Init(imgFlags) & imgFlags)){
         printf("SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError());
         exit(1);
@@ -60,14 +60,14 @@ void initBasic(void){
     }
 }
 
-//±q¤å¥óÀÉÅª¤J¦a¹Ï¨ì¦a¹Ï°}¦C
+//ï¿½qï¿½ï¿½ï¿½ï¿½ï¿½Åªï¿½Jï¿½aï¿½Ï¨ï¿½aï¿½Ï°}ï¿½C
 void initMap1(void){
     FILE *fMap = fopen("map1.txt", "r");
     if(fMap == NULL){
         printf("cannot find the file\n");
         exit(1);
     }
-    //Åª¤J°}¦C
+    //Åªï¿½Jï¿½}ï¿½C
     int mapWidth, mapHeight;
     fscanf(fMap, "%d %d", &mapWidth, &mapHeight);
 
@@ -84,7 +84,7 @@ void initMap2(void){
         printf("cannot find the file\n");
         exit(1);
     }
-    //Åª¤J°}¦C
+    //Åªï¿½Jï¿½}ï¿½C
     for(int i = 0; i<MAP_WIDTH; i++){
         for(int j = 0; j<MAP_HEIGHT; j++){
             fscanf(fMap, "%d", &map[i][j]);
@@ -98,7 +98,7 @@ void initMap3(void){
         printf("cannot find the file\n");
         exit(1);
     }
-    //Åª¤J°}¦C
+    //Åªï¿½Jï¿½}ï¿½C
     for(int i = 0; i<MAP_WIDTH; i++){
         for(int j = 0; j<MAP_HEIGHT; j++){
             fscanf(fMap, "%d", &map[i][j]);
@@ -107,7 +107,7 @@ void initMap3(void){
     fclose(fMap);
 }
 
-//Åª¨ú¤£¦P¦a¹Ï©Ò»Ýªº¹Ï¤ù(¨¤¦â¡BÀð¾À¡B¦aªO¡B¨ä¥L)
+//Åªï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½aï¿½Ï©Ò»Ýªï¿½ï¿½Ï¤ï¿½(ï¿½ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½Bï¿½aï¿½Oï¿½Bï¿½ï¿½L)
 void initPicture1(void){
     //floor texture
     SDL_Surface *floorSurface = IMG_Load("picture\\floorGrey.png");
@@ -165,7 +165,7 @@ void initPicture1(void){
     SDL_FreeSurface(whiteMouseSurface);
     SDL_FreeSurface(blackMouseSurface);
 
-    //¦Ñ¹«¦b²Ä¤@ÃöªºÃC¦â¼Æ¶q
+    //ï¿½Ñ¹ï¿½ï¿½bï¿½Ä¤@ï¿½ï¿½ï¿½ï¿½ï¿½Cï¿½ï¿½Æ¶q
     whiteMouse = 3;
     blackMouse = 2;
 
@@ -267,9 +267,9 @@ void initPicture3(void){
     SDL_FreeSurface(characterSurface);
 }
 
-//ªì©l¤Æ¹CÀ¸¶}©l¹Ï¤ù **¥ý¤À³o­ÓÃþ¡A«á­±¦A¾ã²z (·Q­n·|¦@¦P¥Î¨ìªº¹Ï¤ù©ñ¤@°_...) ¡Bwordle­¶­±
+//ï¿½ï¿½lï¿½Æ¹Cï¿½ï¿½ï¿½}ï¿½lï¿½Ï¤ï¿½ **ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½á­±ï¿½Aï¿½ï¿½z (ï¿½Qï¿½nï¿½|ï¿½@ï¿½Pï¿½Î¨ìªºï¿½Ï¤ï¿½ï¿½ï¿½@ï¿½_...) ï¿½Bwordleï¿½ï¿½ï¿½ï¿½
 void initStartPicture(void){
-    //«öenter¶i¤J¡B¹êÅç«Ç¶}ªù¡BÃöªùªº¹Ï
+    //ï¿½ï¿½enterï¿½iï¿½Jï¿½Bï¿½ï¿½ï¿½ï¿½Ç¶}ï¿½ï¿½ï¿½Bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     SDL_Surface *pressToEnterSurface = IMG_Load("picture\\pressToEnter.png");
     SDL_Surface *doorCloseSurface = IMG_Load("picture\\doorClose.png");
     SDL_Surface *doorOpenSurface = IMG_Load("picture\\doorOpen.png");
@@ -286,7 +286,7 @@ void initStartPicture(void){
     SDL_FreeSurface(doorOpenSurface);
 }
 
-//ªì©l¤Æcomputer©Mwordle¹Ï¤ù:3­ÓÃC¦â¡B¹q¸£¿Ã¹õ(3­Ó)¡BÀ³¥Îµ{¦¡¹Ï¥Ü(4­Ó + 1±i·Ó¤ù)¡Bwordle(?¡B°h¥X)¡B¨C¤@¦æ¦r¥Àª¬ºA(ºñ¡B¶À¡B¦Ç)
+//ï¿½ï¿½lï¿½ï¿½computerï¿½Mwordleï¿½Ï¤ï¿½:3ï¿½ï¿½ï¿½Cï¿½ï¿½Bï¿½qï¿½ï¿½ï¿½Ã¹ï¿½(3ï¿½ï¿½)ï¿½Bï¿½ï¿½ï¿½Îµ{ï¿½ï¿½ï¿½Ï¥ï¿½(4ï¿½ï¿½ + 1ï¿½iï¿½Ó¤ï¿½)ï¿½Bwordle(?ï¿½Bï¿½hï¿½X)ï¿½Bï¿½Cï¿½@ï¿½ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½A(ï¿½ï¿½Bï¿½ï¿½ï¿½Bï¿½ï¿½)
 void initWordlePicture(){
     
     //3desktop
@@ -317,7 +317,7 @@ void initWordlePicture(){
         }
         SDL_FreeSurface(mutualSurface);
     }
-    //À³¥Îµ{¦¡¹Ï¥Ü(4­Ó + 4±i·Ó¤ù)
+    //ï¿½ï¿½ï¿½Îµ{ï¿½ï¿½ï¿½Ï¥ï¿½(4ï¿½ï¿½ + 4ï¿½iï¿½Ó¤ï¿½)
    for(int i = 0; i<8; i++){
         SDL_Surface *mutualSurface = NULL;
         switch(i){
@@ -337,7 +337,7 @@ void initWordlePicture(){
                 computerApp[i].type = computer_app_book;
                 break;
             case computer_app_eCos:
-                mutualSurface = IMG_Load("picture\\deskEcourse.png");
+                mutualSurface = IMG_Load("picture\\Ecourse2.png");
                 computerApp[i].eightType = SDL_CreateTextureFromSurface(renderer, mutualSurface);
                 computerApp[i].type = computer_app_eCos;
                 break;
@@ -371,7 +371,7 @@ void initWordlePicture(){
         SDL_FreeSurface(mutualSurface);
     }
 
-    //wordle(³W«hÂIÀ»¹Ï¥Ü(°Ý¸¹)¡B°h¥X¹Ï¥Ü)¡B¦¨¥\µe­±¡Bwordle¥D­¶­±
+    //wordle(ï¿½Wï¿½hï¿½Iï¿½ï¿½ï¿½Ï¥ï¿½(ï¿½Ý¸ï¿½)ï¿½Bï¿½hï¿½Xï¿½Ï¥ï¿½)ï¿½Bï¿½ï¿½ï¿½\ï¿½eï¿½ï¿½ï¿½Bwordleï¿½Dï¿½ï¿½ï¿½ï¿½
     for(int i = 0; i<6; i++){
         SDL_Surface *mutualSurface = NULL;
         switch(i){
@@ -386,7 +386,7 @@ void initWordlePicture(){
                 wordlePageOption[i].type = wordle_page_quit;
                 break;
             case wordle_page_rule:
-                mutualSurface = IMG_Load("picture\\wordle_rules.png");
+                mutualSurface = IMG_Load("picture\\wordleRule.png");
                 wordlePageOption[i].sixType = SDL_CreateTextureFromSurface(renderer, mutualSurface);
                 wordlePageOption[i].type = wordle_page_rule;
                 break;
@@ -415,7 +415,7 @@ void initWordlePicture(){
         SDL_FreeSurface(mutualSurface);
     }
 
-    //¨C¤@¦æ¦r¥Àª¬ºA(ºñ¡B¶À¡B¦Ç)
+    //ï¿½Cï¿½@ï¿½ï¿½rï¿½ï¿½ï¿½ï¿½ï¿½A(ï¿½ï¿½Bï¿½ï¿½ï¿½Bï¿½ï¿½)
     for(int i = 0; i<3; i++){
         SDL_Surface *mutualSurface = NULL;
         switch(i){
@@ -446,40 +446,40 @@ void initWordlePicture(){
 
 }
 
-//¦a¹Ï©M¨¤¦â®y¼Ðªºªì©l¤Æ
+//ï¿½aï¿½Ï©Mï¿½ï¿½ï¿½ï¿½yï¿½Ðªï¿½ï¿½ï¿½lï¿½ï¿½
 void initCoordinate(){
-    //ªì©l¤Æ¨¤¦âªº®y¼Ð©M¦ì²¾¶q
+    //ï¿½ï¿½lï¿½Æ¨ï¿½ï¿½âªºï¿½yï¿½Ð©Mï¿½ì²¾ï¿½q
     character.x = CHARACTER_X, character.y = CHARACTER_Y, character.offset_x = 0, character.offset_y = 0;
-    //ªì©l¤Æ¦a¹Ïªº®y¼Ð©M¦ì²¾¶q
+    //ï¿½ï¿½lï¿½Æ¦aï¿½Ïªï¿½ï¿½yï¿½Ð©Mï¿½ì²¾ï¿½q
     mapPoint.x = MAPPOINT_X, mapPoint.y = MAPPOINT_Y, mapPoint.offset_x = 0, mapPoint.offset_y = 0;
 }
 
-//¦å¶qªºªì©l¤Æ(full = 5, empty = 0, dead = false(0))
+//ï¿½ï¿½qï¿½ï¿½ï¿½ï¿½lï¿½ï¿½(full = 5, empty = 0, dead = false(0))
 void initHp(){
     hp.full = TOTAL_HP, hp.empty = 0, hp.deadOrNot = false;
 }
 
-//¦Ñ¹«ªº¤­°¦¦Ñ¹«¥X²{¦b¦a¹Ï¤WªºÀH¾÷®y¼Ð, ¤@©w¥Í¦¨¦bªÅ¦a, ¥X²{¦ì¸m¥i¥H­«Å|
+//ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Xï¿½{ï¿½bï¿½aï¿½Ï¤Wï¿½ï¿½ï¿½Hï¿½ï¿½ï¿½yï¿½ï¿½, ï¿½@ï¿½wï¿½Í¦ï¿½ï¿½bï¿½Å¦a, ï¿½Xï¿½{ï¿½ï¿½mï¿½iï¿½Hï¿½ï¿½ï¿½|
 void initMouse(){
-    //¥Í¦¨ªº¼Æ¦r¥Nªí¦Ñ¹«¦b¦a¹Ï¤Wªº®y¼Ð
+    //ï¿½Í¦ï¿½ï¿½ï¿½ï¿½Æ¦rï¿½Nï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½bï¿½aï¿½Ï¤Wï¿½ï¿½ï¿½yï¿½ï¿½
     int tmp_x, tmp_y;
     int num_white = 0, num_black = 0;
-    //¨C°¦¦Ñ¹«
+    //ï¿½Cï¿½ï¿½ï¿½Ñ¹ï¿½
     for(int i = 0; i<TOTAL_MOUSE; i++){
-        //ÀH¾÷¥Í¦¨¼Æ¦r
+        //ï¿½Hï¿½ï¿½ï¿½Í¦ï¿½ï¿½Æ¦r
         do{
-            tmp_x = rand() % (MAP_WIDTH / ITEM_SIZE); //¾l0~24 ¤£¶W¹L¦a¹Ï½d³ò
+            tmp_x = rand() % (MAP_WIDTH / ITEM_SIZE); //ï¿½l0~24 ï¿½ï¿½ï¿½Wï¿½Lï¿½aï¿½Ï½dï¿½ï¿½
             tmp_y = rand() % (MAP_HEIGHT / ITEM_SIZE);
-        }while(map[tmp_y][tmp_x] != 0 || (tmp_x == CHARACTER_X && tmp_y == (CHARACTER_Y + MAP_LIMIT) / ITEM_SIZE)); //¦Ñ¹«¥X²{¦b­ìÂI©Î«DªÅ¦a ­«·s¶]ÀH¾÷¼Æ¦r
-        //ªì©l¤Æ¨C°¦¦Ñ¹«®y¼Ð
-        //ÀH¾÷¶Â¥Õ
-        //0¥Õ¹«, 1¶Â¹«
+        }while(map[tmp_y][tmp_x] != 0 || (tmp_x == CHARACTER_X && tmp_y == (CHARACTER_Y + MAP_LIMIT) / ITEM_SIZE)); //ï¿½Ñ¹ï¿½ï¿½Xï¿½{ï¿½bï¿½ï¿½ï¿½Iï¿½Î«Dï¿½Å¦a ï¿½ï¿½ï¿½sï¿½]ï¿½Hï¿½ï¿½ï¿½Æ¦r
+        //ï¿½ï¿½lï¿½Æ¨Cï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½yï¿½ï¿½
+        //ï¿½Hï¿½ï¿½ï¿½Â¥ï¿½
+        //0ï¿½Õ¹ï¿½, 1ï¿½Â¹ï¿½
         if(rand() % 2 == 0 && num_white < whiteMouse){
             mouse[i].color = white;
             num_white++;
         }
         else{
-            if(num_black < blackMouse){//¦pªG¶Â¦Ñ¹«¼Æ¶q¨Sº¡
+            if(num_black < blackMouse){//ï¿½pï¿½Gï¿½Â¦Ñ¹ï¿½ï¿½Æ¶qï¿½Sï¿½ï¿½
                 mouse[i].color = black;
                 num_black++;
             }    
@@ -488,7 +488,7 @@ void initMouse(){
                 num_white++;
             }
         }
-        //®y¼Ð
+        //ï¿½yï¿½ï¿½
         mouse[i].x = tmp_x;
         mouse[i].y = tmp_x;
         mouse[i].offset_x = 0;
@@ -498,14 +498,14 @@ void initMouse(){
     
 }
 
-//¨C¤@Ãöªºwordleªì©l¤Æ(1. 7*7, 2. 4*4¡B6*6, 3. 5*5)
+//ï¿½Cï¿½@ï¿½ï¿½ï¿½ï¿½wordleï¿½ï¿½lï¿½ï¿½(1. 7*7, 2. 4*4ï¿½B6*6, 3. 5*5)
 void initWordleAns(){
-    //²Ä¤@Ãö7*7
+    //ï¿½Ä¤@ï¿½ï¿½7*7
     wordle_row = 7, wordle_column = 7;
-    //wordleªº®æ¤l
-    //wordleªº®æ¤l
+    //wordleï¿½ï¿½ï¿½ï¿½l
+    //wordleï¿½ï¿½ï¿½ï¿½l
     wordle_letters_square[wordle_row][wordle_column];
-    //²Ä¤@Ãö bondage
+    //ï¿½Ä¤@ï¿½ï¿½ bondage
     for(int i = 0; i<wordle_row; i++){
         for(int j = 1; j<=wordle_column; j++){
         switch(j){
@@ -542,9 +542,9 @@ void initWordleAns(){
     }
 }
 
-//¥´¶}­I¥](ª««~Äæ)ªº¹Ï¤ùªì©l¤Æ
+//ï¿½ï¿½ï¿½}ï¿½Iï¿½](ï¿½ï¿½ï¿½~ï¿½ï¿½)ï¿½ï¿½ï¿½Ï¤ï¿½ï¿½ï¿½lï¿½ï¿½
 void initBagPicture(){
-    //«öe¥´¶}­I¥]ªº¹Ï
+    //ï¿½ï¿½eï¿½ï¿½ï¿½}ï¿½Iï¿½]ï¿½ï¿½ï¿½ï¿½
     SDL_Surface *bag1Surface = IMG_Load("picture\\bag.png");
     SDL_Surface *bag2Surface = IMG_Load("picture\\bag1.png");
     SDL_Surface *bag3Surface = IMG_Load("picture\\bag2.png");
@@ -565,7 +565,7 @@ void initBagPicture(){
 
 }
 
-//¸I¨ì¦Ñ¹«©â¼úªº¹Ï¤ù
+//ï¿½Iï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¤ï¿½
 void initluckyDrawPicture(){
     SDL_Surface *oopsSurface = IMG_Load("picture\\oops.png");
     SDL_Surface *HPrecoverSurface = IMG_Load("picture\\HPrecover.png");
@@ -586,18 +586,18 @@ void initluckyDrawPicture(){
     SDL_FreeSurface(attackedSurface);
 }
 
-//ªì©l¤Æ¦rÅé
+//ï¿½ï¿½lï¿½Æ¦rï¿½ï¿½
 void initFont(){
-    //¦rÅé¤j¤p
+    //ï¿½rï¿½ï¿½jï¿½p
     int font_size = 24;
-    //¹w³]¦rÅé
+    //ï¿½wï¿½]ï¿½rï¿½ï¿½
     font = TTF_OpenFont("Amestonsans-mLMj5.ttf", font_size);
     if(font == NULL){
         printf("Unable to load font! %s\n", SDL_GetError());
     }
 }
 
-//ªì©l¤Æ¨C¤@Ãöªº­I¥]´£¥Ü¯È±ø
+//ï¿½ï¿½lï¿½Æ¨Cï¿½@ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½]ï¿½ï¿½ï¿½Ü¯È±ï¿½
 void initBagHintPicture(){
     //level 1 **if level_1
     for(int i = 0; i<9; i++){
@@ -643,7 +643,7 @@ void initBagHintPicture(){
                 bagStore[i].hintType = SDL_CreateTextureFromSurface(renderer, mutualSurface);
                 bagStore[i].gotHint = false;
                 break;
-            case 8: //Àx¦sÆ_°Í
+            case 8: //ï¿½xï¿½sï¿½_ï¿½ï¿½
                 mutualSurface = IMG_Load("picture\\key.png");
                 bagStore[i].hintType = SDL_CreateTextureFromSurface(renderer, mutualSurface);
                 bagStore[i].gotHint = false;
