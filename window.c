@@ -98,9 +98,22 @@ void drawScene() {
 // 處理滑鼠事件
 void handleMouseEvent(SDL_Event* event) {
     if (event->type == SDL_MOUSEMOTION) {
-        // 滑鼠移動的處理
+        int x, y;
+        SDL_GetMouseState(&x, &y);
+        if (x >= startButtonRect.x && x <= startButtonRect.x + startButtonRect.w &&
+            y >= startButtonRect.y && y <= startButtonRect.y + startButtonRect.h) {
+            isMouseOverStartButton = true;
+        } else {
+            isMouseOverStartButton = false;
+        }
+
+        if (x >= exitButtonRect.x && x <= exitButtonRect.x + exitButtonRect.w &&
+            y >= exitButtonRect.y && y <= exitButtonRect.y + exitButtonRect.h) {
+            isMouseOverExitButton = true;
+        } else {
+            isMouseOverExitButton = false;
+        }
     } else if (event->type == SDL_MOUSEBUTTONDOWN) {
-        // 滑鼠按下的處理
         int x, y;
         SDL_GetMouseState(&x, &y);
         if (x >= startButtonRect.x && x <= startButtonRect.x + startButtonRect.w &&
@@ -113,7 +126,6 @@ void handleMouseEvent(SDL_Event* event) {
             isMouseDown = true;
         }
     } else if (event->type == SDL_MOUSEBUTTONUP) {
-        // 滑鼠釋放的處理
         if (isMouseDown) {
             int x, y;
             SDL_GetMouseState(&x, &y);
@@ -121,8 +133,8 @@ void handleMouseEvent(SDL_Event* event) {
                 y >= startButtonRect.y && y <= startButtonRect.y + startButtonRect.h) {
                 // 在此處添加遊戲開始的邏輯
                 printf("START!\n");
-                // 執行 main.exe
-                system("start main.exe");
+                // 執行第二個程序
+                system("main.exe");
             }
 
             if (x >= exitButtonRect.x && x <= exitButtonRect.x + exitButtonRect.w &&
